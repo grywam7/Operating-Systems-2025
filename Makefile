@@ -11,7 +11,7 @@ STATIC_LIB = libcollatz.a
 SHARED_LIB = libcollatz.so
 
 # targety
-all: countdown static shared client_static client_shared client_dynamic flipper lab4zad1 lab4zad2 lab5zad1 sender catcher lab6zad1 lab6zad2a lab6zad2b lab7client lab7server lab8client lab8server lab8printer lab9zad1 lab10zad1 lab11client lab11server
+all: countdown static shared client_static client_shared client_dynamic flipper lab4zad1 lab4zad2 lab5zad1 sender catcher lab6zad1 lab6zad2a lab6zad2b lab7client lab7server lab8client lab8server lab8printer lab9zad1 lab10zad1 lab11client lab11server lab12server lab12client
 
 countdown: countdown.c
 	$(CC) $(CFLAGS) -g -o countdown countdown.c
@@ -92,7 +92,13 @@ lab11server: lab11server.c
 lab11client: lab11client.c
 	$(CC) $(CFLAGS) -o lab11client lab11client.c
 
+lab12server: lab12server.c
+	$(CC) $(CFLAGS) -o lab12server lab12server.c
+
+lab12client: lab12client.c
+	$(CC) $(CFLAGS) -o lab12client lab12client.c
+
 clean:
-	rm -f client_static client_shared client_dynamic countdown flipper $(STATIC_LIB) $(SHARED_LIB) collatz.o lab4zad1 lab4zad2 lab5zad1 sender catcher /tmp/fifo_req /tmp /fifo_res lab6zad1 lab6zad2a lab6zad2b  lab7client lab7server lab8client lab8server lab8printer lab9zad1 lab10zad1 lab11server lab11client
+	rm -f client_static client_shared client_dynamic countdown flipper $(STATIC_LIB) $(SHARED_LIB) collatz.o lab4zad1 lab4zad2 lab5zad1 sender catcher /tmp/fifo_req /tmp /fifo_res lab6zad1 lab6zad2a lab6zad2b  lab7client lab7server lab8client lab8server lab8printer lab9zad1 lab10zad1 lab11server lab11client lab12server lab12client
 
 .PHONY: all clean static shared client_static client_shared client_dynamic 
